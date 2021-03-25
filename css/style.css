@@ -177,10 +177,10 @@ body{
 }
 
 #main-content .pagination li a:hover{
-    background-color: #333;
+    background-color: #e74c3c;
 }
 #main-content .pagination li.active>a{
-    background-color: #333;
+    background-color: #e74c3c;
 }
 .admin-pagination {
     display: flex;

@@ -45,19 +45,13 @@ $offset = ($page - 1) * $limit;
                 <td><?php echo $row['sphone']; ?></td>
                 <td>
                     <a href='edit.php?id=<?php echo $row['sid']; ?>'>Edit</a>
-                    <a data-id="{$row['sid']}" class="delete-btn">Delete</a>
+                    <a href='delete.php?id=<?php echo $row['sid']; ?>'>Delete</a>
                 </td>
             </tr>
             <?php } ?>
-            <tr>
-                <td id="table-data">
-                </td>
-            </tr>
         </tbody>
             
     </table>
-    <div id="error-message"></div>
-    <div id="success-message"></div>
     <?php }else{
         echo "<h2>No Record Found</h2>";
     }
@@ -97,47 +91,6 @@ $offset = ($page - 1) * $limit;
 </div>
 </div>
 
-<script src="./js/jquery.js"></script>
-<script>
 
-    $(document).ready(function(){
-        // Live Search 
-        $("#search").on("keyup",function(){
-            var search_term = $(this).val();
-
-            $.ajax({
-                url: "ajax-live-search.php",
-                type: "POST",
-                data : {search:search_term },
-                success: function(data) {
-                 $("#table-data").html(data);
-                }
-            });
-        });
-        // Delete Record
-        $(document).on("click",".delete-btn", function(){
-            if(confirm("Do you really want to delete this record ?")){
-                var studentId = $(this).data("sid");
-                var element = this;
-
-                $.ajax({
-                    url: "ajax-delete.php",
-                    type : "POST",
-                    data : {id : studentId},
-                    success : function(data){
-                        if(data == 1){
-                        $(element).closest("tr").fadeOut();
-                        }else{
-                        $("#error-message").html("Can't Delete Record.").slideDown();
-                        $("#success-message").slideUp();
-                        }
-                     }
-                });
-            }
-        }); 
-    });
-
-
-</script>
 </body>
 </html>

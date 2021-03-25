@@ -27,8 +27,4 @@
                     <a href="delete.php">Delete</a>
                 </li>
             </ul>
-            <div id="search-bar">
-                <label>Search :</label>
-                <input type="text" id="search" autocomplete="off">
-            </div>
         </div>
