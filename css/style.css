@@ -13,12 +13,12 @@ body{
 
 #header{
     text-align: center;
-    background-color: #DDDDDD !important;
+    background-color: #1abc9c;
     padding: 10px;
 }
 
 #header h1{
-    color: #f25287 !important;
+    color: #fff;
     font-size: 40px;
     font-style: italic;
     font-weight: 700;
@@ -27,10 +27,7 @@ body{
 }
 
 #menu{
-    background-color: #f7d9d9 !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #333;
 }
 #menu ul{
     font-size: 0;
@@ -42,7 +39,7 @@ body{
     display: inline-block;
 }
 #menu ul li a{
-    color: #f25287 !important;
+    color: #fff;
     font-size: 16px;
     font-weight: 600;
     padding: 8px 10px;
@@ -54,23 +51,15 @@ body{
 
 #menu ul li a:hover{
     background-color: rgba(255,255,255,0.2);
-} 
-#search-bar {
-    margin-right: 20px;
-}
-#search-bar label {
-    color: #f25287;
 }
 
 #main-content{
      padding: 25px;
     min-height: 400px;
-    background-color: #f9f3f3;
 }
 #main-content h2{
     margin: 0 0 10px;
     text-transform: capitalize;
-    color: #536162;
 }
 
 #main-content table{
@@ -80,8 +69,8 @@ body{
 }
 
 #main-content table th{
-    color: #f25287;
-    background-color: #f7d9d9 !important;
+    color: #fff;
+    background-color: #333;
     text-transform: uppercase;
 }
 #main-content table th:last-child{
@@ -164,7 +153,7 @@ body{
 
 #main-content .pagination li a{
     height: 30px;
-    width: 50px;
+    width: 30px;
     line-height: 30px;
     font-size: 18px;
     text-align: center;
@@ -177,12 +166,5 @@ body{
 }
 
 #main-content .pagination li a:hover{
-    background-color: #e74c3c;
-}
-#main-content .pagination li.active>a{
-    background-color: #e74c3c;
-}
-.admin-pagination {
-    display: flex;
-    justify-content: center;
+    background-color: #333;
 }

@@ -11,7 +11,7 @@
 
     <?php 
         if(isset($_POST['showbtn'])){
-        $conn = mysqli_connect("localhost","root","","crud") or die("Connection Failed");
+        $conn = mysqli_connect("localhost","root","","crud",) or die("Connection Failed");
 
         $stu_id = $_POST['sid'];
 
