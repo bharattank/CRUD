@@ -4,45 +4,53 @@ $search_value = $_POST["search"];
 
 $conn = mysqli_connect("localhost","root","","crud") or die("Connection Failed");
 
-$sql = "SELECT * FROM student AS s LEFT JOIN studentclass AS sc ON cid 
+$sql = "SELECT * FROM student AS s  
 WHERE s.sname LIKE '%{$search_value}%' 
 OR s.saddress LIKE '%{$search_value}%' 
-OR s.sphone LIKE '%{$search_value}%' 
-OR sc.cname LIKE '%{$search_value}%'";
+OR s.sclass LIKE '%{$search_value}%' 
+OR s.sphone LIKE '%{$search_value}%'
+OR s.scity LIKE '%{$search_value}%'";
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
 $output = "";
-if(mysqli_num_rows($result) > 0 ){
-  $output = '<table cellpadding="7px">
-                <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Class</th>
-                <th>Phone</th>
-                <th>Action</th>
-                </tr>';
+if(mysqli_num_rows($result) > 0) {
+    ?>
 
-              while($row = mysqli_fetch_assoc($result)){
-                $output .= "<tr>
-                    <td>{$row['sid']}</td>
-                    <td>{$row['sname']}</td>
-                    <td>{$row['saddress']}</td>
-                    <td>{$row['cname']}</td>
-                    <td>{$row['sphone']}</td>
-                    <td>
-                        <a '{$row['sid']}'>Edit</a>
-                        <a '{$row['sid']}'>Delete</a>
-                    </td>
-            </tr>";
-            }
-           
-    $output .= "</table>";
+    
+    <table cellpadding="7px" id="table-data">
+        <thead>
+        <!-- <th>Id</th> -->
+        <th>Name</th>
+        <th>Address</th>
+        <th>Class</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Action</th>
+        </thead>
+        <tbody>
+        <?php 
 
-    mysqli_close($conn);
+            while($row = mysqli_fetch_assoc($result)){
 
-    echo $output;
-}else{
-    echo "<h2>No Record Found.</h2>";
-}
+            
+        ?>
+            <tr>
+                <!-- <td><?php //echo $row['sid']; ?></td> -->
+                <td><?php echo $row['sname']; ?></td>
+                <td><?php echo $row['saddress']; ?></td>
+                <td><?php echo $row['sclass']; ?></td>
+                <td><?php echo $row['sphone']; ?></td>
+                <td><?php echo $row['scity']; ?></td>
+                <td>
+                    <a href='edit.php?id=<?php echo $row['sid']; ?>'>Edit</a>
+                    <a href='delete.php?id=<?php echo $row['sid']; ?>'>Delete</a>
+                </td>
+            </tr>
+            <?php } ?>
+        </tbody>
+            
+    </table>
+    <?php }else{
+        echo "<h2>No Record Found</h2>";
+    }
 
 ?>

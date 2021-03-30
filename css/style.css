@@ -13,12 +13,12 @@ body{
 
 #header{
     text-align: center;
-    background-color: #1abc9c;
+    background-color: #DDDDDD !important;
     padding: 10px;
 }
 
 #header h1{
-    color: #fff;
+    color: #f25287 !important;
     font-size: 40px;
     font-style: italic;
     font-weight: 700;
@@ -27,7 +27,10 @@ body{
 }
 
 #menu{
-    background-color: #333;
+    background-color: #f7d9d9 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #menu ul{
     font-size: 0;
@@ -39,7 +42,7 @@ body{
     display: inline-block;
 }
 #menu ul li a{
-    color: #fff;
+    color: #f25287 !important;
     font-size: 16px;
     font-weight: 600;
     padding: 8px 10px;
@@ -51,15 +54,23 @@ body{
 
 #menu ul li a:hover{
     background-color: rgba(255,255,255,0.2);
+} 
+#search-bar {
+    margin-right: 20px;
+}
+#search-bar label {
+    color: #f25287;
 }
 
 #main-content{
      padding: 25px;
     min-height: 400px;
+    background-color: #f9f3f3;
 }
 #main-content h2{
     margin: 0 0 10px;
     text-transform: capitalize;
+    color: #536162;
 }
 
 #main-content table{
@@ -69,8 +80,8 @@ body{
 }
 
 #main-content table th{
-    color: #fff;
-    background-color: #333;
+    color: #f25287;
+    background-color: #f7d9d9 !important;
     text-transform: uppercase;
 }
 #main-content table th:last-child{
@@ -78,6 +89,7 @@ body{
 }
 #main-content table td{
     background-color: #fff;
+    text-align: center;
 }
 #main-content table td a{
     font-size: 14px;
@@ -129,7 +141,7 @@ body{
     text-transform: uppercase;
     padding: 5px 10px;
     color: #fff;
-    background-color: #333;
+    background-color: #e74c3c;
     border: none;
     border-radius: 5px;
     margin: 0 0 0 30%;
@@ -153,7 +165,7 @@ body{
 
 #main-content .pagination li a{
     height: 30px;
-    width: 30px;
+    width: 50px;
     line-height: 30px;
     font-size: 18px;
     text-align: center;
@@ -166,5 +178,29 @@ body{
 }
 
 #main-content .pagination li a:hover{
-    background-color: #333;
+    background-color: #e74c3c;
+}
+#main-content .pagination li.active>a{
+    background-color: #e74c3c;
+}
+.admin-pagination {
+    display: flex;
+    justify-content: center;
+}
+.file-choose {
+    margin: 0 0 10px 30%;
+}
+.file-choose-inner {
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.file-choose-inner:hover{
+    box-shadow: 0 0 5px #555;
 }

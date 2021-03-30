@@ -11,7 +11,7 @@
 
     <?php 
         if(isset($_POST['showbtn'])){
-        $conn = mysqli_connect("localhost","root","","crud",) or die("Connection Failed");
+        $conn = mysqli_connect("localhost","root","","crud") or die("Connection Failed");
 
         $stu_id = $_POST['sid'];
 
@@ -36,19 +36,15 @@
         <div class="form-group">
         <label>Class</label>
         <?php 
-          $sql1 = "SELECT * FROM studentclass";
+          $sql1 = "SELECT * FROM student";
           $result1 = mysqli_query($conn, $sql1) or die("Query Unsuccessfull");
 
             if(mysqli_num_rows($result1) > 0) {
                 echo "<select name='sclass'>";
             while($row1 = mysqli_fetch_assoc($result1)){
-                if($row['sclass'] == $row1['cid']){
-                    $select = "selected";
-                }else{
-                    $select = "";
-                }
+
           
-            echo "<option {$select} value='{$row1["cid"]}'>{$row1["cname"]}</option>";
+            echo "<option {$select} value='{$row1["sclass"]}'></option>";
             }
           echo "</select>";
         }
@@ -58,6 +54,10 @@
         <div class="form-group">
             <label>Phone</label>
             <input type="text" name="sphone" value="<?php echo $row['sphone']; ?>" />
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" name="scity" value="<?php echo $row['scity']; ?>" />
         </div>
     <input class="submit" type="submit" value="Update"  />
     </form>

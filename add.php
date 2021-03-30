@@ -12,30 +12,33 @@
         </div>
         <div class="form-group">
             <label>Class</label>
-            <select name="class">
+            <select name="sclass">
                 <option value="" selected disabled>Select Class</option>
-                <?php 
-                    $conn = mysqli_connect("localhost","root","","crud",) or die("Connection Failed");
+                <option value="BscIT">BscIT</option>
+                <option value="BCA">BCA</option>
+                <option value="BTECH">BTECH</option>
+                <option value="Bsc">Bsc</option>
 
-                    $sql = "SELECT * FROM studentclass";
-                    $result = mysqli_query($conn, $sql) or die("Query Unsuccessfull");
 
-                    while($row = mysqli_fetch_assoc($result)){
+                <!-- <option value="<?php //echo $row['cname']; ?>"><?php //echo $row['cname']; ?></option> -->
 
-                    
-                ?>
-                <option value="<?php echo $row['cid']; ?>"><?php echo $row['cname']; ?></option>
-
-                <?php } ?>
             </select>
         </div>
         <div class="form-group">
             <label>Phone</label>
             <input type="text" name="sphone" />
         </div>
-        <input class="submit" type="submit" value="Save"  />
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" name="scity" />
+        </div>
+        <div class="file-upload">
+            <input type="file" name="fileToUpload" id="fileToUpload" />
+        </div>
+        <input class="submit" type="submit" value="Save" />
     </form>
 </div>
 </div>
 </body>
+
 </html>

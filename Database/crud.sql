@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 24, 2021 at 01:06 PM
+-- Generation Time: Mar 30, 2021 at 06:29 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -32,43 +32,28 @@ CREATE TABLE IF NOT EXISTS `student` (
   `sid` int(10) NOT NULL AUTO_INCREMENT,
   `sname` varchar(30) NOT NULL,
   `saddress` varchar(100) NOT NULL,
-  `sclass` int(10) NOT NULL,
+  `sclass` varchar(100) NOT NULL,
   `sphone` varchar(10) NOT NULL,
+  `simage` varchar(100) NOT NULL,
+  `scity` varchar(255) NOT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`sid`, `sname`, `saddress`, `sclass`, `sphone`) VALUES
-(40, 'bharat', 'Apple Squre', 7, '9033712672'),
-(41, 'Nirav', 'Apple Squre', 6, '8989898998'),
-(42, 'bharat', 'Apple Squre', 6, ''),
-(44, 'Bharat', 'Apple Squre', 7, ''),
-(45, 'Jaydeep', 'Apple Squre', 6, '3514654');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `studentclass`
---
-
-DROP TABLE IF EXISTS `studentclass`;
-CREATE TABLE IF NOT EXISTS `studentclass` (
-  `cid` int(11) NOT NULL AUTO_INCREMENT,
-  `cname` varchar(15) NOT NULL,
-  PRIMARY KEY (`cid`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentclass`
---
-
-INSERT INTO `studentclass` (`cid`, `cname`) VALUES
-(7, 'BscIT'),
-(6, 'BTECH'),
-(5, 'BCA');
+INSERT INTO `student` (`sid`, `sname`, `saddress`, `sclass`, `sphone`, `simage`, `scity`) VALUES
+(54, 'Nisha', 'Apple Squre', 'BscIT', '9898989898', 'B.jpg', ''),
+(53, 'Jaydeep', 'Apple Squre', 'BscIT', '9898989898', '', ''),
+(52, 'Nirav', 'Apple Squre', 'BCA', '7878787878', '', ''),
+(51, 'Bharat', 'Apple Squre', 'BscIT', '9033712672', '', ''),
+(50, 'Amit', 'Apple Squre', 'BscIT', '9898989898', '', 'surat'),
+(55, 'Dhaval', 'Apple Squre', 'BCA', '9033712672', '', ''),
+(56, 'Srushti', 'Apple Squre', 'BCA', '9033712672', '', ''),
+(57, 'Nayan', 'Apple Squre', 'BscIT', '9033712672', '', ''),
+(100, '', '', '', '', 'Koala.jpg', ''),
+(104, 'Nirav', 'Apple Squre', 'BscIT', '8989898998', 'Koala.jpg', 'surat');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
