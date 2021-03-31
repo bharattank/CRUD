@@ -2,16 +2,16 @@
 
 $search_value = $_POST["search"];
 
-$conn = mysqli_connect("localhost","root","","crud") or die("Connection Failed");
+include 'config.php';
 
 $sql = "SELECT * FROM student AS s  
 WHERE s.sname LIKE '%{$search_value}%' 
 OR s.saddress LIKE '%{$search_value}%' 
 OR s.sclass LIKE '%{$search_value}%' 
 OR s.sphone LIKE '%{$search_value}%'
-OR s.scity LIKE '%{$search_value}%'";
+OR s.scity LIKE '%{$search_value}%'
+OR s.simage LIKE '%{$search_value}%'";
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
-$output = "";
 if(mysqli_num_rows($result) > 0) {
     ?>
 

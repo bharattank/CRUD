@@ -21,7 +21,6 @@
 
         if(mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)){
-        
     ?>
     <form class="post-form" action="updatedata.php" method="post">
         <div class="form-group">
@@ -42,7 +41,11 @@
             if(mysqli_num_rows($result1) > 0) {
                 echo "<select name='sclass'>";
             while($row1 = mysqli_fetch_assoc($result1)){
-
+                if($row['sclass']){
+                    $select = "selected";
+                }else{
+                    $select = "";
+                }   
           
             echo "<option {$select} value='{$row1["sclass"]}'></option>";
             }
@@ -55,11 +58,14 @@
             <label>Phone</label>
             <input type="text" name="sphone" value="<?php echo $row['sphone']; ?>" />
         </div>
+        <div class="file-upload">
+            <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $row['simage']; ?>"/>
+        </div>
         <div class="form-group">
             <label>City</label>
             <input type="text" name="scity" value="<?php echo $row['scity']; ?>" />
         </div>
-    <input class="submit" type="submit" value="Update"  />
+    <input class="submit" type="submit" name="submit" value="Update"  />
     </form>
     <?php 
             }

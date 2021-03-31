@@ -12,7 +12,7 @@ $offset = ($page - 1) * $limit;
 <div id="main-content">
     <h2>All Records</h2>
     <?php 
-        $conn = mysqli_connect("localhost","root","","crud") or die("Connection Failed");
+        include 'config.php';
 
         $sql = "SELECT * FROM student WHERE student.sid LIMIt {$offset}, {$limit}";
         $result = mysqli_query($conn, $sql) or die("Query Unsuccessfull");
@@ -47,7 +47,7 @@ $offset = ($page - 1) * $limit;
                 <td><?php echo $row['sclass']; ?></td>
                 <td><?php echo $row['sphone']; ?></td>
                 <td><?php echo $row['scity']; ?></td>
-                <td><img src="uploads/<?php echo $row['simage']; ?>" width="100" height="100"></td>
+                <td><img src="<?php echo $pathImage. $row['simage']; ?>" width="100" height="100"></td>
                 <td>
                     <a href='edit.php?id=<?php echo $row['sid']; ?>'><i class="fas fa-user-edit"></i></a>
                     <a href='delete.php?id=<?php echo $row['sid']; ?>'><i class="fas fa-trash"></i></a>
