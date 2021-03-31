@@ -4,6 +4,7 @@ $search_value = $_POST["search"];
 
 include 'config.php';
 
+
 $sql = "SELECT * FROM student AS s  
 WHERE s.sname LIKE '%{$search_value}%' 
 OR s.saddress LIKE '%{$search_value}%' 
@@ -43,8 +44,8 @@ if(mysqli_num_rows($result) > 0) {
                 <td><?php echo $row['scity']; ?></td>
                 <td><img src="<?php echo $pathImage. $row['simage']; ?>" width="100" height="100"></td>
                 <td>
-                    <a href='edit.php?id=<?php echo $row['sid']; ?>'>Edit</a>
-                    <a href='delete.php?id=<?php echo $row['sid']; ?>'>Delete</a>
+                    <a href='edit.php?id=<?php echo $row['sid']; ?>'><i class="fas fa-user-edit"></i></a>
+                    <a href='delete.php?id=<?php echo $row['sid']; ?>'><i class="fas fa-trash "></i></a>
                 </td>
             </tr>
             <?php } ?>
@@ -54,5 +55,5 @@ if(mysqli_num_rows($result) > 0) {
     <?php }else{
         echo "<h2>No Record Found</h2>";
     }
-
 ?>
+

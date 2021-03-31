@@ -1,5 +1,5 @@
 <?php include 'header.php'; 
-if(isset($_POST['deletebtn'])){
+if(isset($_POST['delete-btn'])){
     $conn = mysqli_connect("localhost","root","","crud") or die("Connection Failed");
 
     $stu_id = $_POST['sid'];
@@ -22,7 +22,7 @@ if(isset($_POST['deletebtn'])){
             <label>Id</label>
             <input type="text" name="sid" />
         </div>
-        <input class="submit" type="submit" name="deletebtn" value="Delete" />
+        <input class="submit" type="submit" name="delete-btn" value="Delete" />
     </form>
 </div>
 </div>

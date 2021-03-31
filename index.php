@@ -20,7 +20,8 @@ $offset = ($page - 1) * $limit;
         if(mysqli_num_rows($result) > 0) {
     ?>
 
-
+    <div id="error-message"></div>
+    <div id="success-message"></div>
     <table cellpadding="7px" id="table-data">
         <thead>
         <!-- <th>Id</th> -->
@@ -50,7 +51,7 @@ $offset = ($page - 1) * $limit;
                 <td><img src="<?php echo $pathImage. $row['simage']; ?>" width="100" height="100"></td>
                 <td>
                     <a href='edit.php?id=<?php echo $row['sid']; ?>'><i class="fas fa-user-edit"></i></a>
-                    <a href='delete.php?id=<?php echo $row['sid']; ?>'><i class="fas fa-trash"></i></a>
+                    <a href='delete-inline?id=<?php echo $row['sid']; ?>' class="delete-btn"><i class="fas fa-trash "></i></a>
                 </td>
             </tr>
             <?php } ?>
@@ -102,7 +103,7 @@ $offset = ($page - 1) * $limit;
 
 <script>
 $(document).ready(function(){
-// Live Search
+    // Live Search
     $("#search").on("keyup",function(){
        var search_term = $(this).val();
 
@@ -114,6 +115,28 @@ $(document).ready(function(){
            $("#table-data").empty().html(data);
          }
        });
+    });
+
+    //Delete Records
+    $(document).on("click",".delete-btn", function(){
+      if(confirm("Do you really want to delete this record ?")){
+        var studentId = $(this).data("id");
+        var element = this;
+
+        $.ajax({
+          url: "delete-inline.php",
+          type : "POST",
+          data : {id : studentId},
+            success : function(data){
+              if(data == 1){
+                $(element).closest("tr").fadeOut();
+              }else{
+                $("#error-message").html("Can't Delete Record.").slideDown();
+                $("#success-message").slideUp();
+              }
+            }
+        });
+      }
     });
 });
 
