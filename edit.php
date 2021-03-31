@@ -12,7 +12,7 @@
             while($row = mysqli_fetch_assoc($result)){
     ?>
 
-    <form class="post-form" action="updatedata.php" method="post">
+    <form class="post-form" action="updatedata.php" method="post" enctype="multipart/form-data">
       <div class="form-group">
           <label>Name</label>
           <input type="hidden" name="sid" value="<?php echo $row['sid']; ?>"/>

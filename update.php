@@ -1,4 +1,6 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+
+?>
 <div id="main-content">
     <h2>Edit Record</h2>
     <form class="post-form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
@@ -22,7 +24,7 @@
         if(mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)){
     ?>
-    <form class="post-form" action="updatedata.php" method="post">
+    <form class="post-form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">Name</label>
             <input type="hidden" name="sid"  value="<?php echo $row['sid']; ?>" />
