@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 30, 2021 at 06:29 AM
+-- Generation Time: Apr 01, 2021 at 04:12 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -33,27 +33,22 @@ CREATE TABLE IF NOT EXISTS `student` (
   `sname` varchar(30) NOT NULL,
   `saddress` varchar(100) NOT NULL,
   `sclass` varchar(100) NOT NULL,
-  `sphone` varchar(10) NOT NULL,
+  `sphone` varchar(12) NOT NULL,
   `simage` varchar(100) NOT NULL,
   `scity` varchar(255) NOT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=149 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
 INSERT INTO `student` (`sid`, `sname`, `saddress`, `sclass`, `sphone`, `simage`, `scity`) VALUES
-(54, 'Nisha', 'Apple Squre', 'BscIT', '9898989898', 'B.jpg', ''),
-(53, 'Jaydeep', 'Apple Squre', 'BscIT', '9898989898', '', ''),
-(52, 'Nirav', 'Apple Squre', 'BCA', '7878787878', '', ''),
-(51, 'Bharat', 'Apple Squre', 'BscIT', '9033712672', '', ''),
-(50, 'Amit', 'Apple Squre', 'BscIT', '9898989898', '', 'surat'),
-(55, 'Dhaval', 'Apple Squre', 'BCA', '9033712672', '', ''),
-(56, 'Srushti', 'Apple Squre', 'BCA', '9033712672', '', ''),
-(57, 'Nayan', 'Apple Squre', 'BscIT', '9033712672', '', ''),
-(100, '', '', '', '', 'Koala.jpg', ''),
-(104, 'Nirav', 'Apple Squre', 'BscIT', '8989898998', 'Koala.jpg', 'surat');
+(135, 'Nirav', 'Apple Squre', 'BscIT', '8989898998', 'our-team-1.png', 'surat'),
+(143, 'Bharat', 'Apple Squre', 'BscIT', '9033712672', 'consultation-1.jpg', 'surat'),
+(144, 'Jaydeep', 'Apple Squre', 'BCA', '8989898998', 'gallery-2.jpg', 'surat'),
+(145, 'Srushti', 'Apple Squre', 'BscIT', '9033712672', 'consultation-2.jpg', 'surat'),
+(142, 'Nisha', 'Apple Squre', 'BscIT', '9033712672', 'team-2.jpg', 'surat');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
